@@ -1,5 +1,8 @@
 <?php
-
+/*
+ * test
+ *
+ * */
 use model\Manager\ArticleManager;
 use model\Mapping\ArticleMapping;
 
