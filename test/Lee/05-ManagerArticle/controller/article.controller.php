@@ -110,4 +110,5 @@ $selectAllArticles = $articleManager->selectAll();
 }
 
 $title = "Article Home";
+$crazilyNestedSql = $articleManager->selectAllWithCatAndComm();
 require('../view/article/article.home.view.php');

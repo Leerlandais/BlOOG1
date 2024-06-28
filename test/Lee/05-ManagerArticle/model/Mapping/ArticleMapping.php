@@ -7,6 +7,10 @@ use model\Trait\TraitDateTime;
 use model\Trait\TraitSlugify;
 use DateTime;
 use Exception;
+use model\Mapping\UserMapping;
+use model\Mapping\TagMapping;
+use model\Mapping\CategoryMapping;
+use model\Mapping\CommentMapping;
 
 class ArticleMapping extends AbstractMapping
 {
@@ -23,6 +27,11 @@ class ArticleMapping extends AbstractMapping
     protected null|string|DateTime $article_date_publish=null;
     protected ?int $user_user_id=null;
 
+    // add getters and setters
+    protected  ?array $mappedUser=null;
+    protected  ?array $mappedTags=null;
+    protected  ?array $mappedCats=null;
+    protected  ?array $mappedComm=null;
 
     public function getArticleId(): ?int
     {
