@@ -171,6 +171,39 @@ class ArticleManager implements InterfaceManager{
         }
         
     }
+    public function selectAllWithCatAndComm() : array | string
+    {
+        $sql  = "SELECT A.*,
+                COALESCE(comm_count, 0) AS comm_count,
+                COALESCE(cats, '') AS cats
+                FROM article A
+                LEFT JOIN (
+                        SELECT C.article_article_id,
+                        COUNT(C.comment_id) AS comm_count
+                        FROM comment C
+                        GROUP BY C.article_article_id
+                        ) AS comm 
+                        ON A.article_id = comm.article_article_id
+                        LEFT JOIN (
+                                SELECT AHC.article_article_id,
+                                GROUP_CONCAT(CAT.category_name SEPARATOR ', ') AS cats
+                                FROM article_has_category AHC
+                        LEFT JOIN category CAT 
+                        ON AHC.category_category_id = CAT.category_id
+                        GROUP BY AHC.article_article_id
+                        ) AS cat ON A.article_id = cat.article_article_id";
+
+
+        $query = $this->runQuery($sql);
+        if (!is_array($query)) throw new Exception("Something went wrong with the query");
+        $result = [];
+        foreach($query as $value){
+            $result[] = new ArticleMapping($value);
+        }
+        return $result;
+    }
 
 }
+
+
 
