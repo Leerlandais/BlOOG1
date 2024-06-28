@@ -56,4 +56,4 @@ LEFT JOIN (
     GROUP BY 
         AHC.article_article_id
 ) AS cat ON A.article_id = cat.article_article_id;
-"
+";
