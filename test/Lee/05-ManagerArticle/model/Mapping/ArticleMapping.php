@@ -29,9 +29,11 @@ class ArticleMapping extends AbstractMapping
 
     // add getters and setters
     protected  ?array $mappedUser=null;
+
     protected  ?array $mappedTags=null;
     protected  ?array $mappedCats=null;
     protected  ?array $mappedComm=null;
+
 
     public function getArticleId(): ?int
     {
