@@ -3,7 +3,9 @@
 use model\Manager\ArticleManager;
 use model\Mapping\ArticleMapping;
 
+
 $articleManager = new ArticleManager($dbConnect);
+
 
 
 if(isset($_POST['artTitle'], $_POST["artText"])) {
