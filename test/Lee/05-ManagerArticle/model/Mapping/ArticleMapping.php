@@ -7,10 +7,7 @@ use model\Trait\TraitDateTime;
 use model\Trait\TraitSlugify;
 use DateTime;
 use Exception;
-use model\Mapping\UserMapping;
-use model\Mapping\TagMapping;
-use model\Mapping\CategoryMapping;
-use model\Mapping\CommentMapping;
+
 
 class ArticleMapping extends AbstractMapping
 {
@@ -134,5 +131,14 @@ class ArticleMapping extends AbstractMapping
     {
         if ($user_user_id < 0) throw new Exception("ID NON VALIDE");
         $this->user_user_id = $user_user_id;
+    }
+
+    public function getMappedUser() : ?array
+    {
+        return $this->mappedUser;
+    }
+
+    public function setMappedUser() {
+    
     }
 }
