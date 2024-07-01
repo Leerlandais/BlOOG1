@@ -8,7 +8,6 @@ use model\Trait\TraitSlugify;
 use DateTime;
 use Exception;
 
-
 class ArticleMapping extends AbstractMapping
 {
 
@@ -24,13 +23,7 @@ class ArticleMapping extends AbstractMapping
     protected null|string|DateTime $article_date_publish=null;
     protected ?int $user_user_id=null;
 
-    // add getters and setters
-    protected  ?array $mappedUser=null;
-
-    protected  ?array $mappedTags=null;
-    protected  ?array $mappedCats=null;
-    protected  ?array $mappedComm=null;
-
+    protected ?array $mappedUser=null;
 
     public function getArticleId(): ?int
     {
@@ -135,37 +128,16 @@ class ArticleMapping extends AbstractMapping
         $this->user_user_id = $user_user_id;
     }
 
-    public function getMappedUser() : ?array
+
+    public function getMappedUser()
     {
         return $this->mappedUser;
     }
-
-    public function setMappedUser($mappedUser) {
+ 
+    public function setMappedUser($mappedUser)
+    {
         $this->mappedUser = $mappedUser;
-    }
-    public function getMappedTags() : ?array
-    {
-        return $this->mappedTags;
-    }
 
-    public function setMappedTags($mappedTags) {
-        $this->mappedTags = $mappedTags;
+        return $this;
     }
-    public function getMappedCats() : ?array
-    {
-        return $this->mappedCats;
-    }
-
-    public function setMappedCats($mappedCats) {
-        $this->mappedCats = $mappedCats;
-    }
-    public function getMappedComm() : ?array
-    {
-        return $this->mappedComm;
-    }
-
-    public function setMappedComm($mappedComm) {
-        $this->mappedComm = $mappedComm;
-    }
-
 }

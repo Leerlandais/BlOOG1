@@ -3,9 +3,7 @@
 use model\Manager\ArticleManager;
 use model\Mapping\ArticleMapping;
 
-
 $articleManager = new ArticleManager($dbConnect);
-
 
 
 if(isset($_POST['artTitle'], $_POST["artText"])) {
@@ -104,13 +102,8 @@ if(isset($_GET['action'])
                 ) {
                     $title = "ArticleManager::insert()";
                     include("../view/article/addArticle.view.php");
-        }else if (isset($_GET["allSelect"])) {
-    $title = "All Articles";
-$selectAllArticles = $articleManager->selectAll();
-    require ("../view/article/selectAllArticle.php");
-    die();
-}
+                }
 
-$title = "Article Home";
-$crazilyNestedSql = $articleManager->selectAllWithCatAndComm();
-require('../view/article/article.home.view.php');
+$title = "ArticleManager::selectAll()";
+$selectAllArticles = $articleManager->selectAll();
+require ('../view/article/SelectAllArticle.php');
