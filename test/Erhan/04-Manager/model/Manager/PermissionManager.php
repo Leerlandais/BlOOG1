@@ -6,6 +6,8 @@ use Exception;
 use model\Interface\InterfaceManager;
 use model\Mapping\PermissionMapping;
 use model\Abstract\AbstractMapping;
+
+
 use model\OurPDO;
 
 class PermissionManager implements InterfaceManager{
@@ -154,6 +156,6 @@ class PermissionManager implements InterfaceManager{
             return $e->getMessage();
         }
         
-    }
+    }    
 
 }
