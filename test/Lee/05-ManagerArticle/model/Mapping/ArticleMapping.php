@@ -138,7 +138,32 @@ class ArticleMapping extends AbstractMapping
         return $this->mappedUser;
     }
 
-    public function setMappedUser() {
-    
+    public function setMappedUser($mappedUser) {
+        $this->mappedUser = $mappedUser;
     }
+    public function getMappedTags() : ?array
+    {
+        return $this->mappedTags;
+    }
+
+    public function setMappedTags($mappedTags) {
+        $this->mappedTags = $mappedTags;
+    }
+    public function getMappedCats() : ?array
+    {
+        return $this->mappedCats;
+    }
+
+    public function setMappedCats($mappedCats) {
+        $this->mappedCats = $mappedCats;
+    }
+    public function getMappedComm() : ?array
+    {
+        return $this->mappedComm;
+    }
+
+    public function setMappedComm($mappedComm) {
+        $this->mappedComm = $mappedComm;
+    }
+
 }
