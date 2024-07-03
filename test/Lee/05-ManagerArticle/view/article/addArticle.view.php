@@ -8,6 +8,7 @@
     <title><?=$title?></title>
 </head>
     <body>
+        <?php include 'menu.article.view.php' ?>
     <main class="w-screen h-screen flex justify-center items-center dark:bg-gray-900">
   <div class="max-w-7xl dark:bg-gray-950 dark:text-white">
     <form class=" w-full p-4 rounded shadow-md" action="" method="POST">
