@@ -17,7 +17,7 @@
             </div>
         <?php
         // Instanciation de la classe ArticleManager
-        $articleManager = new ArticleManager($dbConnect);
+
 
         // Appel de la méthode selectAll
         $articles = $articleManager->selectAll();
@@ -55,8 +55,6 @@
                     echo "<p>Article Tag Slug: " . $tag->getTagSlug() . "</p>";
                 endforeach;
             endif;
-
-
         }
         ?>
     </body>

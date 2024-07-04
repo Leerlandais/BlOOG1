@@ -106,4 +106,5 @@ if(isset($_GET['action'])
 
 $title = "ArticleManager::selectAll()";
 $selectAllArticles = $articleManager->selectAll();
+$articleManager = new ArticleManager($dbConnect);
 require ('../view/article/SelectAllArticle.php');

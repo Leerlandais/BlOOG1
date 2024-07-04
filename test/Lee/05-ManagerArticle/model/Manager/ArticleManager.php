@@ -180,7 +180,7 @@ public function selectArticleAndUser () {
 
 
         // on récupère tous les articles avec jointures
-        $query = $this->db->query("
+        $query = $this->connect->query("
         SELECT a.*, 
                u.`user_id`, u.`user_login`, u.`user_full_name`,
                GROUP_CONCAT(c.`category_id`) as`category_id`, 
@@ -278,7 +278,7 @@ public function selectArticleAndUser () {
     {
 
         // on récupère tous les articles avec jointures
-        $query = $this->db->query("
+        $query = $this->connect->query("
         SELECT a.*, 
                u.`user_id`, u.`user_login`, u.`user_full_name`,
                GROUP_CONCAT(c.`category_id`) as`category_id`, 
