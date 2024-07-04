@@ -23,8 +23,42 @@ class ArticleMapping extends AbstractMapping
     protected null|string|DateTime $article_date_publish=null;
     protected ?int $user_user_id=null;
 
-    protected ?array $mappedUser=null;
 
+    protected ?UserMapping $user=null;
+
+    protected ?array $categories=null;
+
+    protected ?array $tags=null;
+
+    public function getUser(): ?UserMapping
+    {
+        return $this->user;
+    }
+
+    public function setUser(?UserMapping $user): void
+    {
+        $this->user = $user;
+    }
+
+    public function getCategories(): ?array
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?array $categories): void
+    {
+        $this->categories = $categories;
+    }
+
+    public function getTags(): ?array
+    {
+        return $this->tags;
+    }
+
+    public function setTags(?array $tags): void
+    {
+        $this->tags = $tags;
+    }
     public function getArticleId(): ?int
     {
         return $this->article_id;
@@ -129,15 +163,5 @@ class ArticleMapping extends AbstractMapping
     }
 
 
-    public function getMappedUser()
-    {
-        return $this->mappedUser;
-    }
- 
-    public function setMappedUser($mappedUser)
-    {
-        $this->mappedUser = $mappedUser;
 
-        return $this;
-    }
 }
