@@ -163,5 +163,14 @@ class ArticleMapping extends AbstractMapping
     }
 
 
+    public function getMappedUser() : array|null
+    {
+        return $this->mappedUser;
+    }
+ 
+    public function setMappedUser($mappedUser) :void
+    {
+        $this->mappedUser = $mappedUser;
 
+    }
 }
