@@ -39,6 +39,7 @@ if (isset($_GET["select"])) {
             echo $twig->render("publicView/public.oneArt.view.twig", ["article" => $article]);
             break;
         case "oneAuthor":
+            $id = $_GET["id"];
             $author = $articleManager->selectArticlesForOneUser($id);
 
             echo $twig->render('publicView/public.oneAuthor.view.twig', ["authors" => $author ]);
